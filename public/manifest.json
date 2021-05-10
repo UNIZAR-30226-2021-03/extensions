@@ -1,0 +1,16 @@
+{
+  "name": "KeyPax",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Storage your password secure",
+  "icons": {
+      "512": "llave.png"
+  },
+  "browser_action": {
+      "default_icon": "llave.png",
+      "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs"
+ ]
+}

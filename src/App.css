@@ -1,0 +1,81 @@
+.input {
+  height: 60px;
+  width: 400px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-class {
+  height: 35px;
+  border-radius: 10px;
+  padding-left: 10px;
+  width: 200px;
+  border-width: 1px;
+}
+.App {
+  padding-top: 15px;
+  width: 400px;
+}
+.App-header {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+.App-logo{
+  height: 150px;
+  object-fit: contain;
+}
+
+.App-name{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.button{
+  border-radius: 20px ;
+  border-width: 0px;
+  height: 35px;
+  width: 200px;
+}
+
+.modal{
+  height: 200px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.modal-title{
+  font-size: 20px;
+}
+
+.modal-header{
+  justify-content: space-between;
+}
+
+.data-container{
+  height: 60px;
+  width: 400px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data{
+  flex-direction: row;
+  font-size: 20px;
+
+  display: flex;
+}
+
+.data-left{
+margin-left: 10px;
+}
+.data-right{
+margin-right: 10px;
+}
