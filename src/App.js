@@ -14,13 +14,18 @@ function App() {
       setToken(null)
     }
   },[])
+
+  const closeSession = () => {
+      localStorage.removeItem('token')
+      setToken(null)
+  }
   
   return (
     <>
     {token === null ? 
         <LogIn setToken={setToken}/>
       :
-        <Info accessToken={token} setToken={setToken}/>
+        <Info accessToken={token} closeSession={closeSession}/>
     }
     </>
   );

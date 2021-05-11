@@ -33,15 +33,14 @@ const Info = (props) => {
             
                switch(response.status){
                     case 401:
-                       props.setToken(null)
+                       props.closeSession()
                     break;
                     case 403:
-                        props.setToken(null)
+                        props.closeSession()
                     break;
                     case 200:
                         setData(response.data)
-                    break;
- 
+                    break;  
                }
             }catch(err){
 

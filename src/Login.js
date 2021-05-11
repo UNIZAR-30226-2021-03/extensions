@@ -63,7 +63,7 @@ function LogIn(props) {
         <input className="input-class" type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>  
       </div>
       <div className="input">
-        <input className="input-class" type="text" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}required/>  
+        <input className="input-class" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}required/>  
       </div>
       <div className="input">
         <button  className="button" onClick={submit}>
