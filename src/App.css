@@ -13,6 +13,16 @@
   width: 200px;
   border-width: 1px;
 }
+
+.input-error {
+  height: 35px;
+  border-radius: 10px;
+  padding-left: 10px;
+  width: 200px;
+  border-width: 1px;
+  border-color: red;
+}
+
 .App {
   padding-top: 15px;
   width: 400px;
@@ -78,4 +88,22 @@ margin-left: 10px;
 }
 .data-right{
 margin-right: 10px;
+}
+
+.icon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icon {
+  width: 300px;
+  object-fit: contain;
+}
+.icon-text{
+  font-size: 18px;
+  font-weight: bold;
+  width: 300px;
+  text-align: center;
 }

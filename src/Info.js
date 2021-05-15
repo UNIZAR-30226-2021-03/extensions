@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css';
 import logo from './llave.png';
+import icon from './icon.png'
 const Info = (props) => {
 
     const [url,setUrl] = useState("")
@@ -72,18 +73,33 @@ const Info = (props) => {
                 </div>
             )
         })
+
+        if (datas.length === 0) {
+            return <div className="icon-container">
+                <div className="App-name">
+                        {url}
+                </div>
+                <img src={icon} className="icon"></img>
+                <div className="icon-text">
+                    No se han encontrado contraseñas para esta pagina web
+                </div>
+            </div>
+        }else{
+            datas.unshift(
+                <header className="App-header">
+                    <div className="App-name">
+                        {url}
+                    </div>
+                    <img src={logo} className="App-logo" alt="logo" />
+                </header>
+            )
+        }
         return datas
     }
 
     return (
         
         <div className="App">
-            <header className="App-header">
-                <div className="App-name">
-                    {url}
-                </div>
-                <img src={logo} className="App-logo" alt="logo" />
-            </header>
             {parseData()}
         </div>
     )

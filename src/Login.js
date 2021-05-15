@@ -9,15 +9,26 @@ function LogIn(props) {
   const [password,setPassword] = useState("")
   const [_2faToken,set_2faToken] = useState(null)
   const [_2faAuth,set_2faAuth] = useState("")
-
+  const [err,setErr] = useState(false)
 
   const submit = async () => {  
     try {
       const body = { email, password }
       const response = await axios.post("https://keypax-api.sytes.net/public/login", body)
-      set_2faToken(response.data._2faToken)
+
+      switch (response.status) {
+        case 200:
+          setErr(false)
+          set_2faToken(response.data._2faToken)
+          break;
+        default:
+          setErr(true)
+          break;
+      }
+      
 
       }catch (error) {
+        setErr(true)
     }
   }
 
@@ -42,7 +53,6 @@ function LogIn(props) {
             <div className="modal">
         	    <div className="modal-header">
 			    	<Modal.Title className="modal-title">Introduce codigo 2fa</ Modal.Title>
-
 			    </div>
                 <div className="input">
                     <input className="input-class" type="text"  placeholder="Código" value={_2faAuth} onChange={(e) => set_2faAuth(e.target.value)} required/>  
@@ -58,13 +68,26 @@ function LogIn(props) {
         </div>
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-
-      <div className="input">
-        <input className="input-class" type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>  
-      </div>
-      <div className="input">
-        <input className="input-class" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}required/>  
-      </div>
+      {err === true ? 
+      <>
+        <div className="input">
+          <input className="input-error" type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>  
+        </div>
+        <div className="input">
+          <input className="input-error" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}required/>  
+        </div>
+      </>
+      :
+      <>
+        <div className="input">
+          <input className="input-class" type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>  
+        </div>
+        <div className="input">
+          <input className="input-class" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}required/>  
+        </div>
+      </>
+    }
+      
       <div className="input">
         <button  className="button" onClick={submit}>
           SUBMIT
