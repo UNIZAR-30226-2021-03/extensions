@@ -47,7 +47,7 @@ const Info = (props) => {
                     break;  
                }
             }catch(err){
-
+                props.closeSession()
             }
         }
     }
