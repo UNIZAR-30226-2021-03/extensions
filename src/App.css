@@ -98,7 +98,7 @@ margin-right: 10px;
 }
 
 .icon {
-  width: 300px;
+  max-height: 250px;
   object-fit: contain;
 }
 .icon-text{
@@ -106,4 +106,12 @@ margin-right: 10px;
   font-weight: bold;
   width: 300px;
   text-align: center;
+}
+
+.clip{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 50px;
 }

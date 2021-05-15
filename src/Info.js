@@ -4,6 +4,9 @@ import axios from 'axios'
 import './App.css';
 import logo from './llave.png';
 import icon from './icon.png'
+import { BsClipboardData } from "react-icons/bs";
+import CopyToClipboard from 'react-copy-to-clipboard'
+
 const Info = (props) => {
 
     const [url,setUrl] = useState("")
@@ -67,7 +70,12 @@ const Info = (props) => {
                             {_data.username}:
                         </div>
                         <div className="data-left">
-                            {_data.password}:
+                        <CopyToClipboard text={_data.password}>
+                            <button className="clip">
+                                <BsClipboardData/>
+                            </button>
+                        </CopyToClipboard>
+                            
                         </div>
                     </div>
                 </div>
